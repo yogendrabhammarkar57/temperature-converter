@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+    </style>
+    <script src="https://kit.fontawesome.com/477bfa2aa6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="switch">
+    <header
+        class='darkHead flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+        <div class='flex flex-wrap items-center justify-between gap-5 w-full'>
+            <!-- Logo -->
+            <div class="flex justify-center gap-4 items-center">
+                <i class="text-2xl fa-solid fa-temperature-three-quarters"></i>
+                <span class="text-2xl font-semibold">Temperature Converter</span>
+            </div>
+
+            <!-- right buttons -->
+            <div class='flex max-lg:ml-auto space-x-4'>
+                <button type="button"
+                    class="darkMode px-5 text-gray-700 cursor-pointer py-2.5 rounded-lg tracking-wider  border-none outline-none bg-gray-100 hover:bg-gray-300 transition-all duration-300 font-semibold flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-moon text-lg"></i>
+                    <p class="pb-[2px]">Theme</p>
+                </button>
+                <button type="button"
+                    class="px-5 text-gray-700 cursor-pointer py-2.5 rounded-lg tracking-wider  border-none outline-none bg-gray-100 hover:bg-gray-300 transition-all duration-300 font-semibold flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <p>Help</p>
+                </button>
+        </div>
+    </header>
+    <div class="flex justify-center my-20">
+        <div class="rounded-lg bg-white switch mainDark p-6 w-[500px] shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)]">
+            <!-- top heading -->
+            <div class="m-6 text-center">
+                <h2 class="mb-2 text-2xl font-semibold">Convert Temperature</h2>
+                <p class="text-neutral-600 topHead">Enter a value and select units to convert between temperature scales</p>
+            </div>
+            <!-- input value -->
+            <div class="space-y-2">
+                <p class="text-lg ml-5 font-medium">Temperature Value</p>
+                <div class="flex items-center justify-center">
+                    <input type="number"
+                        class="input w-[90%] h-12 rounded-md border shadow-lg border-none pl-5 focus:ring-neutral-300"
+                        placeholder="Enter temperature...">
+                </div>
+            </div>
+            <!-- choose unit -->
+        <div >
+            <div class=" flex">
+                <!-- from unit-->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mt-5">
+                        <span class="text-lg font-medium ml-5">From</span>
+                        <div class="ml-5 mt-3 relative">
+                            <!-- select unit 1 -->
+                            <div style="padding: 10px;" class="unit1 unit1dark w-52 mb-2 h-10 flex justify-between items-center rounded-md border-gray-300 border p-2 shadow-sm cursor-pointer focus:border-neutral-300 focus:ring-1 focus:ring-neutral-300">
+                                <h1 class="heading1">Select Unit</h1>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="bg-white selectedunit1 units1dark hide top-12 absolute w-52 rounded-md text-center border-gray-300 border p-2 shadow-sm focus:border-neutral-300 focus:ring-1 flex justify-center flex-col items-center focus:ring-neutral-300">
+                                <p class="p-1 c1 hover:bg-gray-200 w-[95%] mt-1 cursor-pointer" >Celsius (°C)</p>
+                                <p class="p-1 f1 hover:bg-gray-200 w-[95%] mt-1 cursor-pointer">Fahrenheit (°F)</p>
+                                <p class="p-1 k1 hover:bg-gray-200 w-[95%] mb-1 cursor-pointer">Kelvin (K)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- to unit -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mt-5">
+                        <span class="text-lg font-medium ml-5">To</span>
+                        <div class="ml-5 mt-3 relative">
+                            <!-- select unit 2 -->
+                            <div style="padding: 10px;" class="unit2 unit2dark w-52 mb-2 h-10 flex justify-between items-center rounded-md border-gray-300 border p-2 shadow-sm cursor-pointer focus:border-neutral-300 focus:ring-1 focus:ring-neutral-300">
+                                <h1 class="heading2">Select Unit</h1>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="selectedunit2 units2dark hide top-12 absolute w-52 bg-white rounded-md text-center border-gray-300 border p-2 shadow-sm focus:border-neutral-300 focus:ring-1 flex justify-center flex-col items-center focus:ring-neutral-300">
+                                <p class="p-1 c2 hover:bg-gray-200 w-[95%] mt-1 cursor-pointer" >Celsius (°C)</p>
+                                <p class="p-1 f2 hover:bg-gray-200 w-[95%] mt-1 cursor-pointer">Fahrenheit (°F)</p>
+                                <p class="p-1 k2 hover:bg-gray-200 w-[95%] mb-1 cursor-pointer">Kelvin (K)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="flex justify-center items-center">
+                <button type="submit" class="w-[95%] bg-[#7f7f7f] cursor-not-allowed mt-5 rounded-md px-4 py-2 text-white mainBtn cursorNot" disabled>
+                    Convert Temperature
+                  </button>
+            </div>
+           </div>
+            
+            <div id="result" class="mt-6 rounded-md h-14 bg-neutral-100 p-4 flex justify-center items-center">
+                <p class="text-lg answer font-medium ">Result will appear here</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer id="footer" class="switch darkFooter border-t border-gray-400 bg-white pt-5">
+        <div class="container text-center text-neutral-600">
+          <p class="foot">© 2025 Temperature Converter. All rights reserved.</p>
+        </div>
+      </footer>
+      <script src="script.js"></script>
+</body>
+
+</html>

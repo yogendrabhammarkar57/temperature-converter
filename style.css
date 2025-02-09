@@ -1,0 +1,22 @@
+.hide{
+    display: none;
+}
+.onButton{
+    background-color: black;
+    cursor: pointer;
+}
+.dark{
+    background-color:#1f2937;
+    color: white;
+}
+.darked1{
+    background-color:#1f2937;
+    color: white;
+}
+.darked2{
+    background-color:#1f2937;
+    color: white;
+}
+.footcolor{
+    color: white;
+}
